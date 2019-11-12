@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 //const mayorDeEdad = (edad) => edad > 18;
 /* const curso = {
 	title: 'React desde cero',
@@ -10,10 +10,12 @@ import PropTypes from 'prop-types';
 	price: '50 usd'
 }; */
 
-const Curso = ({ title, image, tutor, price }) => (
+const Curso = ({ id, title, image, tutor, price }) => (
 	<article className="card" id={title}>
 		<div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-			<img src={image} alt={title} />
+			<Link to={`/cursos/${id}`}>
+				<img src={image} alt={title} />
+			</Link>
 		</div>
 		<div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
 			<h3 className="center">{title}</h3>
